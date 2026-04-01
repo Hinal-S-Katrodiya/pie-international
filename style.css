@@ -1,0 +1,124 @@
+/* Import Google Font */
+/* 1. Define the custom font */
+@font-face {
+    font-family: 'Belleza';
+    /* This is the name you will use later */
+    src: url('assets/belleza.woff2') format('truetype');
+    /* Path to your file */
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Belleza', sans-serif;
+
+}
+
+.custom-navbar .nav-item {
+    margin: 0 14px;
+}
+
+.custom-navbar .nav-link {
+    color: #595D6C !important;
+    font-size: 15px;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 8px 5px !important;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* Active Link Styling */
+.custom-navbar .nav-link.active {
+    color: #8BC34A !important;
+    border-bottom: 3px solid #8BC34A;
+}
+
+/* Hover Effect for normal links */
+.custom-navbar .nav-link:hover {
+    color: #8BC34A !important;
+}
+
+/* Adjust dropdown arrow to match the design */
+.custom-navbar .dropdown-toggle::after {
+    vertical-align: middle;
+    margin-left: 0.3em;
+    border-top: 0.4em solid;
+    border-right: 0.4em solid transparent;
+    border-bottom: 0;
+    border-left: 0.4em solid transparent;
+}
+
+.py-lg-5 {
+    padding-top: 2.3rem !important;
+    padding-bottom: 2.3rem !important;
+}
+
+.px-lg-5 {
+    padding-right: 15rem !important;
+    padding-left: 15rem !important;
+}
+
+/* Section Spacing */
+.about-company-section {
+    background-color: #ffffff;
+}
+
+/* Image Styling */
+.custom-about-img {
+    border-radius: 24px;
+    overflow: hidden;
+
+    box-shadow:
+        /* 0 8px 20px rgba(0, 0, 0, 0.06),
+        0 25px 50px rgba(0, 0, 0, 0.08),
+        0 60px 80px rgba(0, 0, 0, 0.04); */
+
+        0 8px 40px rgba(0, 0, 0, 0.30), 0 25px 50px rgba(0, 0, 0, 0.05), 0 60px 80px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    /* Ensures it fills the column */
+}
+
+/* Heading Styling */
+.about-heading {
+    color: #384971;
+    font-weight: 500;
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+}
+
+/* Paragraph Styling */
+.about-text {
+    color: #4a4a4a;
+    font-size: 21px;
+    /* line-height: 1.8; */
+    text-align: justify;
+    font-weight: 700;
+    width: 100%;
+    /* Aligns the text block nicely on the right edge */
+}
+
+/* Button Styling */
+.btn-know-more {
+    background-color: #9ccb3b;
+    color: #384971;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 4px;
+    border: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-know-more:hover {
+    background-color: #8bb834;
+    /* Slightly darker green on hover */
+    color: #384971;
+}
+
+.btn-know-more svg {
+    margin-bottom: 2px;
+    /* Vertically centers the icon with the text */
+}
