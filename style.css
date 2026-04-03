@@ -75,14 +75,17 @@ body {
         padding: 15px 25px;
         left: 5%;
     }
+
     .hero-product-box .title {
         font-size: 22px;
     }
+
     .hero-slogan-box {
         padding: 10px 20px;
         right: 5%;
         bottom: 5%;
     }
+
     .hero-slogan-box .slogan {
         font-size: 16px;
     }
@@ -193,11 +196,6 @@ body {
 .py-lg-2rem {
     padding-top: 2.3rem !important;
     padding-bottom: 2.3rem !important;
-}
-
-.px-lg-15rem {
-    padding-right: 15rem !important;
-    padding-left: 15rem !important;
 }
 
 .size-image-wrapper {
@@ -348,4 +346,226 @@ body {
 
 .footer-bottom .developer-name {
     color: var(--color-btn-bg);
+}
+
+.navbar-logo {
+    height: 55px;
+    width: auto;
+    transition: height 0.3s ease;
+}
+
+.px-lg-15rem {
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+}
+
+@media (min-width: 992px) {
+    .px-lg-15rem {
+        padding-right: 15rem !important;
+        padding-left: 15rem !important;
+    }
+
+    .navbar-logo {
+        height: 90px;
+    }
+}
+
+@media (max-width: 991px) {
+
+    /* Ensure logo and button stay ON TOP of the full-screen menu */
+    .navbar-brand,
+    .custom-toggler {
+        position: relative;
+        z-index: 1050;
+    }
+
+    /* --- Custom Hamburger Button Styles --- */
+    .custom-toggler {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0;
+        background: transparent;
+    }
+
+    .hamburger-lines {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 22px;
+        width: 30px;
+    }
+
+    .hamburger-lines .line {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: var(--color-primary);
+        /* Uses your dark blue */
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    /* Animate to 'X' when Bootstrap opens the menu */
+    .custom-toggler[aria-expanded="true"] .line1 {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    .custom-toggler[aria-expanded="true"] .line2 {
+        opacity: 0;
+    }
+
+    .custom-toggler[aria-expanded="true"] .line3 {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+
+    /* --- Full Screen Overlay Menu --- */
+    .navbar-collapse {
+        position: fixed !important;
+        /* Force it to map to the whole screen */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #ffffff;
+        /* Hardcoded white to guarantee visibility */
+        z-index: 1040;
+        padding-top: 100px;
+        /* Push links down below the Logo and X */
+
+        /* Flexbox to perfectly center the menu items */
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+
+        /* The Slide-in Animation Setup */
+        transform: translateX(100%);
+        /* Starts 100% off-screen to the right */
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s !important;
+    }
+
+    /* When menu is fully open */
+    .navbar-collapse.show {
+        transform: translateX(0);
+        /* Slide into view */
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* * THE FIX: Completely neutralize Bootstrap's intermediate animation state 
+     * This prevents the menu from glitching out and disappearing 
+     */
+    .navbar-collapse.collapsing {
+        display: flex !important;
+        height: 100vh !important;
+        visibility: visible;
+        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out !important;
+    }
+
+    /* --- Center & Style the Links for Full Screen --- */
+    .custom-navbar .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    .custom-navbar .nav-item {
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .custom-navbar .nav-link {
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: #384971 !important;
+        /* Enforce text color */
+        padding: 10px !important;
+    }
+
+    /* Sub-menu styling */
+    .custom-navbar .dropdown-menu {
+        border: none;
+        background-color: transparent;
+        text-align: center;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .custom-navbar .dropdown-item {
+        padding: 10px;
+        font-size: 16px;
+        color: #555;
+        /* Slightly lighter gray for sub-items */
+    }
+}
+
+.custom-collection-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.custom-collection-img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.custom-size-img {
+    width: 100%;
+    max-width: 1320px;
+    height: auto;
+}
+
+@media (max-width: 767px) {
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .about-text {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .icon-card .label {
+        font-size: 14px;
+    }
+
+    .finish-label {
+        font-size: 16px;
+    }
+
+    .footer-heading {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+
+    .footer-links a,
+    .footer-contact li {
+        font-size: 16px;
+    }
+
+    .contact-icon {
+        font-size: 20px;
+    }
+
+    .footer-bottom {
+        font-size: 15px;
+    }
+
+    .custom-navbar .nav-link {
+        font-size: 18px !important;
+        padding: 8px !important;
+    }
+
+    .custom-navbar .dropdown-item {
+        font-size: 15px;
+        padding: 8px;
+    }
 }
